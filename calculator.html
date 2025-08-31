@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        div{
+            background-color: rgb(6, 21, 4);
+            width: 500px;
+            height: 340px;
+            margin-left:35%;
+            margin-top: 15%;
+            border-radius: 50px;
+            color: gold;
+        }
+        #text1{
+            margin-left:20%;
+            text-align: center;
+            width :300px; 
+            height : 50px;
+        }
+        #butt{
+            margin-left: 37%;
+            background-color: rgb(111, 182, 241);
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">Two Digit Calculator</h1>
+        <input type="text" id="text1" placeholder="Enter Expression"> <br><br><br>
+        <input type="button" id="butt" onclick="calculator()" value="Calculate" />
+        <h3 id="calc" style="text-align: center;font-size: 50px;"></h3>   
+    </div>
+    <script>
+   function calculator(){
+          let opr=document.getElementById("text1").value;
+          for(i=0;i<opr.length;i++){
+             if(opr[i]=='+'|| opr[i]=='-'|| opr[i]=='*'|| opr[i]=='/'){
+                operator=opr[i];
+                result=opr.split(operator);
+                break;
+             }   
+          }
+          let value1=result[0];
+          let value2=result[1];
+          switch(operator){
+            case '-':
+                res=value1-value2;
+                break;
+            case '+':
+                res=value1+value2;
+                break;
+            case '*':
+                res=value1*value2;
+                break;
+            case '/':
+                res=value1/value2;
+                break;
+            default:
+                break;
+         }
+        document.getElementById("calc").innerHTML=value1+operator+value2+"="+res;
+   }
+   
+    </script>
+</body>
+</html>
