@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Eligibility Checker</title>
+    <style>
+        div{
+           background-color: rgb(119, 212, 252);
+           font-size: 30px;
+           width:250px;
+           margin-left: 40%;
+           margin-top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+    <input type="radio" value="illitertate" class="divele">Illiterate<br><br>
+    <input type="radio" value="High school" class="divele">High school<br><br>
+    <input type="radio" value="UG" class="divele">UG<br><br>
+    <input type="radio" value="PG" class="divele">PG<br><br>
+    <input type="radio" value="Doctorate" class="divele">Doctorate<br><br>
+    </div>
+
+    <script>
+        let element=document.getElementById("div1").addEventListener('change',clickevent);
+        let event=document.getElementsByClassName("divele");
+        function clickevent(){
+            let choice;
+            for(i=0;i<event.length;i++){
+                if(event[i].checked){
+                  choice=event[i].value;
+                  break;
+                }      
+            }
+            switch(choice){
+                case 'Illiterate':
+                    alert("Ineligible for job");
+                    break;
+                case 'High school':
+                    alert("Eligible for job");
+                    break;
+                case 'PG':
+                    alert("Ineligible for job");
+                    break;
+                case 'UG':
+                    alert("Eligible for job");
+                    break;
+                case 'Doctorate':
+                    alert("Ineligible for job");
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
