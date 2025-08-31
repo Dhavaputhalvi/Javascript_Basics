@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down Options Adder</title>
+</head>
+<body>
+    <h1>Drop Down Options Adder</h1>
+    <select id="dropdown">
+     
+        <option>select dropdown</option>
+    </select>
+    <script>
+        let arr=['CSE','ECE','EEE','CIVIL','MECH'];
+        let dd=document.getElementById("dropdown");
+        let element;
+        dd.addEventListener('click',functions)
+        function functions(){
+          for(i=0;i<arr.length;i++){
+            element=document.createElement('option')
+            element.value=arr[i];
+            element.textContent=arr[i];
+            dd.append(element);
+          }
+          dd.appendChild(element);
+          
+        };
+        
+    </script>
+</body>
+</html>
