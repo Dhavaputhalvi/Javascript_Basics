@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converters and Leap Year</title>
+    <style>
+        div div{
+            margin: 8%;
+            background-color: rgb(143, 232, 236);
+            height:300px;
+            width:500px;
+            border-radius: 20px;
+            font-size: 15px;
+            text-align: center;
+            
+        }
+        div{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            align-items: center;
+            
+        }
+        #div1{
+            grid-area: 1/1/2/2;
+        }
+        #div2{
+            grid-area: 1/2/2/3;
+        }
+        #div3{
+            grid-area:2/1/3/2;
+        }
+        #div4{
+            grid-area:2/2/3/3;
+        }
+        #div1, #div2, #div3, #div4{
+            height:250px;
+            width:650px;
+            
+        }
+        #number1 ,#number2 ,#number3 ,#number4 {
+            margin-left: 50%;
+            width:350px;
+            height:50px;
+        }
+        #submit1,#submit2,#submit3,#submit4 {
+            margin-left: 65%;
+            width:150px;
+            height:40px;
+            background-color: rgb(110, 237, 75);
+        }
+    </style>
+</head>
+<body>
+  <div>
+    <div id="div1">
+        <h1>m To cm Converter</h1><br>
+        <input type="number" id="number1" placeholder="Enter value in meters"><br><br>
+        <input type="button"  id="submit1" onclick="call1()"value="check cm">
+        <br><h3 id="inner1"></h3>
+    </div>
+    <div id="div2">
+        <h1>cm to inches Converter</h1><br>
+        <input type="number" id="number2" placeholder="Enter value in centimeter"><br><br>
+        <input type="button" id="submit2" onclick="call2()"value="check inches">
+        <br><h3 id="inner2"></h3>
+    </div>
+    <div id="div3">
+        <h1>Cel To Faren Converter</h1><br>
+        <input type="number" id="number3" placeholder="Enter value in celcius"><br><br>
+        <input type="button" id="submit3" onclick="call3()" value="check Farenheit">
+        <br><h3 id="inner3"></h3>
+    </div>
+    <div id="div4">
+        <h1>Leap year or not</h1><br>
+        <input type="number" id="number4" placeholder="Enter year"><br><br>
+        <input type="button" id="submit4" onclick="call4()" value="check Year">
+        <br><h3 id="inner4"></h3>
+    </div>
+  </div>
+    <script>
+            
+        function call1(){
+            let mvalue=Number(document.getElementById("number1").value);
+            let cvalue=mvalue*100; 
+            document.getElementById("inner1").innerHTML="The "+mvalue +" m is equal to "+cvalue+" centimeter."; 
+        }
+        function call2(){
+            let cmvalue=Number(document.getElementById("number2").value);
+            let inch=cmvalue*0.3937;
+            inch.toFixed(3);
+            document.getElementById("inner2").innerHTML="The "+ cmvalue+" cm is equal to "+inch+" inches.";
+        } 
+        function call3(){
+            let celsius=Number(document.getElementById("number3").value);
+            let farenheit=(celsius*(9/5))+32;
+            document.getElementById("inner3").innerHTML=celsius+" degree celsius is equal to "+farenheit +" degree farenheit.";
+        }
+        function call4(){
+            let year=Number(document.getElementById("number4").value);
+            if(year%4==0)
+            {
+                if(year%100==0){
+                        if(year%400==0){
+                            document.getElementById("inner4").innerHTML="a leap year";
+                        }
+                        else{
+                            document.getElementById("inner4").innerHTML="not a leap year";
+                        }
+                }
+                else{
+                    document.getElementById("inner4").innerHTML="a leap year" ;
+                }
+            }
+            else{
+                 document.getElementById("inner4").innerHTML="not a leap year";
+            }
+        }
+
+    </script>
+</body>
+</html>
