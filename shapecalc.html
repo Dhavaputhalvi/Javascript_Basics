@@ -65,6 +65,48 @@
         <br><br><input type="Submit" id="submit">
         <h3 id="areatag"></h3>
     </div>
-    <script src="./shapecalc.js"></script>
+    <script>
+        let htmlshape1=document.getElementById("rectangle");
+let htmlshape2=document.getElementById("circle");
+let htmlshape3=document.getElementById("square");
+
+class shape{
+    square(a){
+        return "area is "+a*a 
+    }
+    rectangle(l,b){
+        return l*b
+    }
+    circle(r){
+        return Math.PI*r*r
+    }
+}
+    let submitbtn=document.getElementById("submit")
+    let shape2=new shape();
+    htmlshape1.addEventListener('click',function(){
+         let a=document.getElementById("breadth");
+         let b=document.getElementById("length");
+         a.style.visibility="visible";
+         b.style.visibility="visible";
+         submitbtn.addEventListener('click',function(){
+         document.getElementById("areatag").innerHTML="Area is "+ shape2.rectangle(a.value,b.value)
+         })
+    })
+    htmlshape2.addEventListener('click',function(){
+         let a=document.getElementById("radius");
+         a.style.visibility="visible";
+         submitbtn.addEventListener('click',function(){
+         document.getElementById("areatag").innerHTML="Area is "+ shape2.circle(a.value)
+         })
+    })
+    htmlshape3.addEventListener('click',function(){
+         let a=document.getElementById("area");
+         a.style.visibility="visible";
+         submitbtn.addEventListener('click',function(){
+         document.getElementById("areatag").innerHTML="Area is "+ shape2.square(a.value)
+         })
+    })
+
+    </script>
 </body>
 </html>
