@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+    <style>
+        body{
+            margin-top: 200px;
+            margin-left: 40%;
+        }
+        #rectangle{
+            width:100px;
+            height:50px;
+            background-color:red;
+        }
+        #circle{
+            width:100px;
+            height:50px;
+            background-color: lightgreen;
+            border-radius:50%;
+        }
+        #square{
+            width:50px;
+            height:50px;
+            background-color: aqua;
+        }
+        #area{
+            
+            visibility: hidden;
+        }
+        #length,#breadth{
+          
+            visibility: hidden;
+        }
+        #radius{
+          
+            visibility: hidden;
+        }
+        input{
+            width:250px;
+            height: 30px;
+        }
+        #submit{
+            margin-left: 80px;
+            width:100px;
+            background-color: black;
+            color: white;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin-left: 20px;">Area Calculator</h1>
+    <div id="shape">
+        <input type="button" id="rectangle" >
+        <input type="button" id="circle" >
+        <input type="button" id="square" ><br>
+    </div>
+    <divi id="calc">
+        <input type="text" id="area" placeholder="Enter side"><br>
+        <input type="text" id="length"placeholder="Enter length"><br>
+        <input type="text" id="breadth" placeholder="Enter breadth"><br>
+        <input type="text" id="radius" placeholder="Enter radius"><br>
+        <br><br><input type="Submit" id="submit">
+        <h3 id="areatag"></h3>
+    </div>
+    <script src="./shapecalc.js"></script>
+</body>
+</html>
