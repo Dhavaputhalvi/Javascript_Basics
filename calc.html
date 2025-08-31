@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(249, 142, 188);
+        }
+        #outer{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: rgb(240, 116, 170);
+            border: 2px solid black;
+            border-radius: 50px;
+            height: 500px;
+            width: 300px;
+            align-items: center;
+            align-self: normal;
+            margin-top: 10%;
+            margin-left: 39%;
+        }
+        #Textarea{
+            width: 200px;
+            height:50px;
+            background-color: rgb(243, 218, 218);
+            font-size: 30px;
+        }
+        div div button{
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+    <div id="outer">
+        <div id="Textarea"></div>
+        <div>
+            <button class="buttons">1</button >
+            <button class="buttons">2</button >
+            <button class="buttons">3</button >
+            <button class="buttons">+</button >
+        </div>
+        <div>
+            <button class="buttons">4</button >
+            <button class="buttons">5</button >
+            <button class="buttons">6</button >
+            <button class="buttons">-</button >
+        </div>
+        <div> 
+            <button class="buttons">7</button >
+            <button class="buttons">8</button>
+            <button class="buttons">9</button">
+            <button class="buttons">*</button >
+        </div>
+        <div>
+            <button id="clear">C</button >
+            <button class="buttons">/</button >
+            <button id="equal">=</button >
+        </div>
+    </div>
+     </div>
+
+    <script>
+         let btns=document.querySelectorAll(".buttons")
+         let equal=document.querySelector("#equal");
+         let input=document.getElementById("Textarea")
+         let clear=document.getElementById("clear")
+
+         btns.forEach((btn)=>{
+            btn.addEventListener('click',()=>{
+                    input.innerHTML+=btn.innerText
+            } )
+         })
+
+         equal.addEventListener('click',()=>{
+            input.innerText=eval(input.innerText)
+         })
+         clear.addEventListener('click',()=>{
+            location.reload();
+         })
+    </script>
+</body>
+</html>
